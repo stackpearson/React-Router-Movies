@@ -1,11 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MovieList = props => {
-  console.log('props from MovieList', props)
+  // console.log('props from MovieList', props)
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
-        <MovieDetails key={movie.id} movie={movie} />
+        <Link to={`/movies/${movie.id}`}>
+          <MovieDetails key={movie.id} movie={movie} />
+        </Link>
+        
       ))}
     </div>
   );
